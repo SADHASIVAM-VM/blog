@@ -1,0 +1,41 @@
+::-webkit-scrollbar{
+    background: #e7e3e3;
+    height: 7px;
+    width: 5px;
+    border-radius: 5px;
+    
+    
+}
+::-webkit-scrollbar-thumb{
+    background: #f3030e;
+    border-radius: 5px;
+    width: 200px;
+} 
+.logo{
+    font-family: cursive;
+}
+.bgblack{
+    background: #020202;
+  
+    border-bottom-left-radius: 50%;
+    border-top-left-radius: 50%;
+}
+.BgSvg{
+
+    
+  
+    
+}
+.bgFoot{
+    border-top-left-radius: 20%;
+    border-top-right-radius: 20%;
+}
+option{
+    padding: 20px;
+    background: #ccc;
+    margin: 200px;
+}
+.cursive{
+    font-family: cursive;
+    text-shadow: 2px 3px 5px rgb(254, 1, 1);
+}
