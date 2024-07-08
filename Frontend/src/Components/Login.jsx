@@ -2,6 +2,12 @@ import React, { useContext, useState } from 'react'
 import { CR_Context } from '../Controllers/GlobalContext'
 import {useNavigate} from 'react-router-dom'
 import { toast } from 'react-toastify'
+import IconPassword from '../assets/ICONS/passsword.png'
+import IconMail from '../assets/ICONS/mail.png';
+import WrongP from '../assets/ICONS/wrongPassword.png'
+import New_user from '../assets/ICONS/user.png'
+import Sign_user from '../assets/ICONS/user1.png'
+
 
 const Login = () => {
   const navigate = useNavigate()
@@ -15,7 +21,7 @@ const Login = () => {
 
   const [handleLogin, setHandleLogin] = useState('')
   const [handleSignUp, setHandleSignUp] = useState('')
-  const [ErrMsg, setErrMsg]= useState();
+
  
   const LoginhandleChange =(e)=>{
     const {value, name} = e.target
@@ -89,9 +95,10 @@ const Login = () => {
         const result = await response.json();
 
         if (response.ok) {
-            console.log('Successfully Siggned in');
+            toast.success('Successfully Sign up');
              navigate('/login')
         } else {
+          toast.warn('Un-successfully Sign up');
             console.log('Sign failed:', result.msg);
         }
     } catch (error) {
@@ -107,39 +114,61 @@ const Login = () => {
       
       {SignUp === "Login" &&
       <form action="" onSubmit={LoginOnSubmit}>
-        <h1 className="text-2xl  my-2 text-center">Login</h1>
+        <h1 className="text-3xl  my-2 text-center font-bold">Login</h1>
           <div className="flex flex-col md:w-[400px] gap-3">
-              <input name="email" type="mail" className=
-              "border  focus:outline-none p-2 rounded-md shadow-sm border-black" placeholder={'E-mail'} onChange={LoginhandleChange} required/>
-              {ErrMsg && <p className='text-red-500 text-[10px]'>{ErrMsg}</p>}
-
-              <input name="password"  type="password" className={`border ${ErrMsg ?  "border-red-500": "border-black"} focus:outline-none p-2 rounded-md shadow-sm`}  placeholder='Password' onChange={LoginhandleChange} required/>
-              <div className="flex items-center justify-between gap-5">
-              <button className='bg-[#f3030e] p-2 rounded-md text-white px-5 shadow-sm shadow-gray-700 md:w-[100px]'>Login</button>
-              <div className="flex flex-col">
-              <p className='text-blue-600 text-xs cursor-pointer'>forgot password !</p>
-              <p className='text-blue-600 text-xs cursor-pointer'onClick={()=> setSignUp("signup")}>Don't have Account ?</p>
+           
+            <div className="relative">
+            <input name="email" type="mail" className=
+              "border-gray-400 border-b md:w-full pl-5 w-[300px]  focus:outline-none p-2 shadow-sm " placeholder={'Type your E-mail'} onChange={LoginhandleChange} required/>
+             <img src={IconMail} alt="" className='w-4 absolute bottom-3'/>
+            </div>
+            <div className="relative">
+            <input name="password" type="password" className=
+              "border-gray-400 border-b md:w-full pl-5 w-[300px]  focus:outline-none p-2 shadow-sm " placeholder={'Type your password'} onChange={LoginhandleChange} required/>
+             <img src={IconPassword} alt="" className='w-4 absolute bottom-3'/>
               </div>
-              </div>
+            <div className="btn grid">
+              <button className='p-2 border border-[#ff3030] bg-[#ff3030] hover:bg-[#ff0000] hover:shadow-xl  text-white transition-all'>Login</button>
+            </div>
+            <div className=" flex items-center gap-2">
+              <p className=" bg-gray-200 p-2 rounded-md cursor-pointer hover:bg-gray-300" title='forgot password !' onClick={()=> navigate('/')}><img src={WrongP} alt="" className='w-5 ' /> </p>
+              <p className=' bg-gray-200 p-2 rounded-md cursor-pointer hover:bg-gray-300' title="New User Registration" onClick={()=> setSignUp('signup')}><img src={New_user} alt="" className='w-5 ' /></p>
+            </div>
           </div>
       </form>}
 
       {
       SignUp === 'signup' &&
       <form action="" onSubmit={SignOnSubmit}>
-      <h1 className="text-2xl  my-2 text-center">SignUp</h1>
-          <div className="flex flex-col md:w-[400px] gap-3">
-              <input name='name' value={handleSignUp.name} type="text" className='border border-black focus:outline-none p-2 rounded-md shadow-sm' placeholder='Name' onChange={handleChange} required/>
-              <input name='email' value={handleSignUp.email} type="mail" className='border border-black focus:outline-none p-2 rounded-md shadow-sm' placeholder='E-mail' onChange={handleChange} required/>
-              <input name='password' value={handleSignUp.password} type="password" className='border border-black focus:outline-none p-2 rounded-md shadow-sm' placeholder='Password' onChange={handleChange}/>
-              <input type="password" value={handleSignUp.password} className='border border-black focus:outline-none p-2 rounded-md shadow-sm' placeholder='Conform Password'/>
-              <div className="flex items-center justify-between gap-5">
-              <button className='bg-[#f3030e] p-2 rounded-md text-white px-5 shadow-sm shadow-gray-700 md:w-[100px]'>sign up</button>
-              <div className="flex flex-col">
-              <p className='text-blue-600 text-xs cursor-pointer' onClick={()=> setSignUp("Login")}>Already have Account ?</p>
+      <h1 className="text-4xl  my-2 text-center font-bold">SignUp</h1>
+
+      <div className="flex flex-col md:w-[400px] gap-3">
+
+          <div className="relative flex items-center">
+              <input name='name'  type="text" value={handleSignUp.name} className="border-gray-400 border-b md:w-full pl-6 w-[300px]  focus:outline-none p-2 shadow-sm " placeholder={'Type your Name'}  onChange={handleChange} required/>
+              <img src={Sign_user} alt=""  className='w-5 absolute bottom-2'/>
+         </div>
+
+            <div className="relative">
+
+              <input name='email' value={handleSignUp.email} type="mail" className="border-gray-400 border-b md:w-full pl-6 w-[300px]  focus:outline-none p-2 shadow-sm " placeholder={'Type your E-mail'} onChange={handleChange} required/>
+              <img src={IconMail} alt=""  className='w-5 absolute bottom-2'/>
+            </div>
+
+              <div className="flex flex-col gap-2 relative">
+              <input name='password' value={handleSignUp.password} type="password" className="border-gray-400 border-b md:w-full pl-6 w-[300px]  focus:outline-none p-2 shadow-sm " placeholder={'password'} onChange={handleChange}/>
+              <img src={IconPassword} alt=""  className='w-5 absolute top-3'/>
+              <img src={IconPassword} alt=""  className='w-5 absolute bottom-2'/>
+              <input type="password" value={handleSignUp.password} className="border-gray-400 border-b md:w-full pl-6 w-[300px]  focus:outline-none p-2 shadow-sm "  placeholder='Conform Password'/>
               </div>
               </div>
-          </div>
+      <div className="btn grid my-4">
+              <button className='p-2 border border-[#ff3030] bg-[#ff3030] hover:bg-[#ff0000] hover:shadow-xl  text-white transition-all'>Sign up</button>
+            </div>
+           <div className="inline-block">
+           <p className=' bg-gray-200 p-2 rounded-md cursor-pointer hover:bg-gray-300' title="Already I have Account" onClick={()=> setSignUp('Login')}><img src={New_user} alt="" className='w-5 ' /></p>
+           <p className=''></p>
+           </div>
       </form>
       }
       </div>

@@ -2,6 +2,8 @@ import React, { useContext, useEffect, useState } from 'react';
 import { Category, Svgs, icons } from '../assets/commonData';
 import Collections from '../Components/SubComponents/Collections';
 import { CR_Context } from '../Controllers/GlobalContext';
+import Lottie from 'react-lottie';
+import animationData from '/public/animationLoading.json' 
 
 const Blog = () => {
   const {PostView} = useContext(CR_Context)
@@ -9,7 +11,14 @@ const Blog = () => {
   const [categoryTitle, setCategoryTitle] = useState("All");
   const [posts, setPosts] = useState([]);
   const [searchs, setSearchs] = useState('');
-  const [srchbt, setSrchbt] = useState(false);
+
+  const defaultOptions = {
+    loop: true,
+    autoplay:'5',
+    animationData: animationData,
+  };
+  
+ 
  
 //console.log(posts)
 
@@ -83,7 +92,12 @@ const Blog = () => {
         
         <div className="right w-full h-full p-3">
           <h1 className='mb-5 text-xl flex gap-3 items-center'>{categoryTitle && categoryTitle ? <>{categoryTitle}</> : "All"}</h1>
-          <div className="flex flex-col md:flex-row justify-center items-center gap-5 flex-wrap" >
+          {
+            posts.length === 0 ? <div>
+            <Lottie options={defaultOptions} height={400} width={400} />
+          </div>
+            :
+            <div className="flex flex-col md:flex-row justify-center items-center gap-5 flex-wrap" >
             {posts
               .filter((itms) => itms.postTitle.toLowerCase().includes(searchs.toLowerCase()) && (itms.category == categoryTitle || categoryTitle == "All"))
               .map((itms) => (
@@ -103,7 +117,8 @@ const Blog = () => {
             posts.filter((itms) => itms.postTitle.toLowerCase().includes(searchs.toLowerCase()) && (itms.category === categoryTitle || categoryTitle === "All")).length === 0 && 
               <img src={icons.empty} className='text-black text-4xl my-20 text-center w-52 opacity-80 -z-[10]' />
               }
-          </div> 
+          </div>
+          } 
         </div>
       </div>
     </div>

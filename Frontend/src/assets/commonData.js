@@ -75,8 +75,16 @@ import share from '../assets/ICONS/share.png'
 import arrow from '../assets/ICONS/arrow.png'
 import profile from '../assets/ICONS/profile1.png'
 import login from '../assets/ICONS/login.png'
+import ar2 from '../assets/ICONS/ar2.png'
 
 export const icons = 
     {
-        save, empty, leftArrow, trading, trending, breedCrumb, catgy, reminder, sendData, share, arrow, profile, login
+        
+        ar2, save, empty, 
+        leftArrow, trading, 
+        trending, breedCrumb, 
+        catgy, reminder, sendData, 
+        share, arrow, profile, login
     }
+
+  

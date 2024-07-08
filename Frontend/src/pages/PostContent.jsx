@@ -112,7 +112,7 @@ const PostContent = () => {
         </div>
       ) : (
         <div className='my-40'>
-          <h1 className="text-xl text-center text-red-500 text-bold">Please Make an Account With Us to Create a Blog</h1>
+          <h1 className="text-xl text-center text-red-500 font-bold">Please Make an Account With Us to Create a Blog</h1>
           <div className="my-28 flex justify-center">
             <button className='bg-blue-400 px-3 p-2 rounded-sm text-white flex items-center gap-3' onClick={() => navigate('/login')}>
               <img src={icons.leftArrow} className='w-5' alt="" /> Back

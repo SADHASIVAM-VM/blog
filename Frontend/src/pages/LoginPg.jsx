@@ -21,7 +21,7 @@ const LoginPg = () => {
               <div className="w-full md:w-1/2 flex items-center md:items-start justify-center flex-col">
                 <img src={logbg} alt="" className="h-[400px]"/>
               </div>
-              <div className="w-full md:w-1/2 flex flex-col justify-center items-center">
+              <div className="w-full md:w-1/2 flex flex-col justify-center items-center  my-5">
                 
                 <Login /> 
               </div>

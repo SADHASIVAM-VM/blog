@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 
 import Whatblog from '../assets/image/Whatblog.png'
-import blog from '../assets/image/Gold and Beige Lined States of Matter Chemistry Infographic .png'
 import bg1 from '../assets/image/bg1.png'
-import PopUP from "../Components/SubComponents/PopUp";
+import blog_post from '/public/blog_Steps.png'
+import { icons } from "../assets/commonData.js";
 
 const Home = () => {
 
@@ -30,39 +30,22 @@ const Home = () => {
         </div>
       </div>
 
-      <div className=" my-5">
+      <div className=" my-5 ">
         <div className="">
-          <div className="p-5 flex flex-col md:flex-row">
-            <div className="md:w-1/2">
-            <h1 className="text-4xl  md:text-start text-center mb-2 text-[#fc3030]">
+        <h1 className="text-4xl p-5   md:text-start text-center mb-2 text-[#fc3030]">
               What is Blog ?
             </h1>
-            <p className="text-justify">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
-              sed nobis pariatur laborum, esse sunt repellat libero rem hic,
-              magni in, facere voluptas neque quidem excepturi necessitatibus
-              deleniti possimus dolorum est nam? Dolores possimus ad vitae
-              doloribus totam amet deserunt itaque eius rem? Tenetur,
-              repellendus nemo! Obcaecati voluptates exercitationem vitae
-              ratione. Natus in a aperiam molestiae aliquam illum quia, ad
-              explicabo maxime doloremque maiores nemo culpa animi, minima,
-              pariatur et dolor dignissimos consectetur? Voluptatem iusto
-              consequatur eligendi enim amet maiores, repudiandae ratione
-              asperiores molestiae excepturi eum, saepe dolores veritatis
-              voluptatum obcaecati ullam fugit velit eos odit vel. Sequi quam
-              accusantium laudantium, at voluptas dignissimos exercitationem
-              temporibus harum commodi ducimus? Impedit cum ullam aperiam qui
-              numquam quis illum voluptate aliquam quibusdam officiis fuga
-              mollitia, optio asperiores pariatur. Suscipit adipisci deserunt
-              laboriosam. Laboriosam porro amet eveniet fuga explicabo quaerat,
-              laudantium soluta. Qui vero nemo, dolor molestias amet earum
-              minus, dolore praesentium pariatur itaque voluptatem laudantium
-              provident maiores dicta odio modi aut adipisci voluptates iste
-              culpa nostrum id. Veniam rem a ex provident similique magni
-              obcaecati tenetur dolore cumque sequi, quia at, perspiciatis nihil
-              vero harum esse soluta? Temporibus asperiores labore ipsum hic
-              facilis quis non, perspiciatis, ad doloribus praesentium a et
-              pariatur?
+          <div className="p-5 flex flex-col md:flex-row">
+            <div className="md:w-1/2 md:order-1">
+            
+            <p className="text-justify md:text-xl">
+Blogs have become a ubiquitous part of the digital landscape, offering a platform for anyone to share their thoughts, ideas, and passions with the world. But what exactly is a blog, and why are they so popular?
+
+At its core, a blog is an online journal, a constantly updated website where authors (bloggers) publish content in reverse chronological order. From personal experiences to industry expertise, blogs cover a vast array of topics. Whether you're a travel enthusiast sharing stunning photographs from your adventures or a tech whiz demystifying the latest gadgets, blogging empowers you to connect with a global audience.
+
+Beyond self-expression, blogs offer a plethora of benefits. They can be used to build an online presence, establish yourself as an authority in your field, or even generate income through advertising or affiliate marketing. Blogs also foster community, creating spaces for conversation and fostering connections with like-minded individuals.
+
+So, are you ready to join the vibrant blogosphere? With a little creativity and dedication, you can create a space that not only ignites your voice but also resonates with a dedicated audience. Start exploring, discover your niche, and unleash the power of your blog! 
             </p>
             </div>
             <div className="md:w-1/2">
@@ -77,40 +60,103 @@ const Home = () => {
               How to post a Blog ?
             </h1>
             <div className="flex flex-col md:flex-row gap-4 items-center  relative">
-            <div className="img md:w-1/2 justify-center flex">
-                <img src={blog} className=" w-[250px] sticky top-0"/>
-              </div>
-              <div className="cont md:w-1/2 w-full">
-                <p className="bg-purple-200 rounded-md p-2 text-justify">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam
-                  nisi velit molestias quos magnam tenetur, dolores,
-                  repellendus, quo tempora aspernatur corrupti debitis
-                  consequatur esse mollitia a fuga rem sint sapiente minima
-                  doloribus. Illo modi officia rem cumque non animi fugiat hic
-                  et voluptate vero, aspernatur rerum nesciunt dolor deleniti
-                  voluptatibus quos quasi quae nostrum adipisci nemo saepe
-                  obcaecati esse. Aut fuga perferendis voluptatem ut,
-                  dignissimos, neque ea dolores, distinctio quas recusandae odio
-                  ipsa numquam debitis et deleniti quasi amet provident corrupti
-                  est praesentium sapiente consequatur earum dolorem.
-                  Blanditiis, autem, deleniti corporis, earum modi reiciendis
-                  fugit harum magni atque aut assumenda.
+            <div className="justify-center flex p-5 flex-col gap-10">
+            
+          
+
+          
+          <img src={blog_post} alt="" />
+                {/* <p className="bg-purple-200 rounded-md p-2 text-justify">
+                Ever dreamt of sharing your expertise with the world? WeDot is here to empower your inner writer! Whether you're a seasoned professional or a passionate hobbyist, our platform offers the perfect space to build your blog and connect with a dedicated audience. But where do you even begin?
                 </p>
-                <p className="text-justify">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam
-                  nisi velit molestias quos magnam tenetur, dolores,
-                  repellendus, quo tempora aspernatur corrupti debitis
-                  consequatur esse mollitia a fuga rem sint sapiente minima
-                  doloribus. Illo modi officia rem cumque non animi fugiat hic
-                  et voluptate vero, aspernatur rerum nesciunt dolor deleniti
-                  voluptatibus quos quasi quae nostrum adipisci nemo saepe
-                  obcaecati esse. Aut fuga perferendis voluptatem ut,
-                  dignissimos, neque ea dolores, distinctio quas recusandae odio
-                  ipsa numquam debitis et deleniti quasi amet provident corrupti
-                  est praesentium sapiente consequatur earum dolorem.
-                  Blanditiis, autem, deleniti corporis, earum modi reiciendis
-                  fugit harum magni atque aut assumenda.
-                </p>
+
+<div className="flex justify-center">
+  <img src={icons.leftArrow} alt="" className="-rotate-90 w-20"/>
+</div>
+                <div>
+                  <h1>Find Your Niche</h1>
+                  <p>What are you most enthusiastic about? Cooking? Coding? Cat videos? Identify your area of expertise or interest, your "niche," to attract a dedicated audience.</p>
+                </div>
+                <div className="flex justify-center">
+                <img src={icons.ar1} alt="" className="w-44 rotate-90"/>
+                </div>
+                <div className="">
+                  <h1>
+                  Explore WeDot's Power
+                  </h1>
+                  <p>
+                  From our intuitive interface to stunning, customizable themes, WeDot provides everything you need to create a blog that reflects your unique personality. Dive into the features and discover how WeDot can simplify your blogging journey.
+                  </p>
+                </div>
+                <div className="flex justify-center">
+                <img src={icons.ar1} alt="" className="w-44 rotate-90"/>
+                </div>
+                <div className="">
+                  <h1>
+                  Craft a Compelling Domain Name
+                  </h1>
+                  <p>
+                  This is your blog's web address, the first impression visitors encounter. Choose a catchy name that's relevant to your niche and easy to remember. WeDot makes domain registration a breeze!
+                  </p>
+                </div>
+                <div className="flex justify-center">
+                <img src={icons.ar1} alt="" className="w-44 rotate-90"/>
+                </div>
+                <div className="">
+                  <h1>
+                  Design Your Space
+                  </h1>
+                  <p>
+                  WeDot offers a plethora of customizable themes to choose from. Find one that resonates with your style and allows for effortless navigation. Remember, your blog's design should enhance your content and user experience.
+                  </p>
+                </div>
+                <div className="flex justify-center">
+                <img src={icons.ar1} alt="" className="w-44 rotate-90"/>
+                </div>
+                <div className="">
+                  <h1>
+                  Unleash Your Inner Writer
+                  </h1>
+                  <p>
+                  The heart of your blog lies in your content. Create engaging, informative, and well-structured posts that capture your audience's attention. WeDot makes content creation easy with intuitive editing tools and multimedia support.
+                  </p>
+                </div>
+                <div className="flex justify-center">
+                <img src={icons.ar1} alt="" className="w-44 rotate-90"/>
+                </div>
+                <div className="">
+                  <h1>
+                  Spread the Word
+                  </h1>
+                  <p>
+                  Share your creations across social media platforms! Connect with other bloggers and explore guest posting opportunities. The more you share, the more your audience grows.
+                  </p>
+                </div>
+                <div className="flex justify-center">
+                <img src={icons.ar1} alt="" className="w-44 rotate-90"/>
+                </div>
+                <div className="">
+                  <h1>
+                  Analyze and Adapt
+                  </h1>
+                  <p>
+                  WeDot provides valuable analytics tools to understand your blog's performance. Utilize these insights to fine-tune your content strategy and cater to your audience's preferences.
+                  </p>
+                </div>
+                <div className="flex justify-center">
+               
+             */}
+             <div className="flex justify-center">
+             <img src={icons.ar2} alt=""  className="rotate-90 w-40"/>
+              
+             </div>
+            <div className="bonus bg-gray-200 p-3 rounded-md">
+
+              <p> <b>Bonus Tip:</b> Consistency is king! Regularly publishing fresh content keeps your audience engaged and coming back for more. Don't be afraid to experiment and find your unique voice – WeDot empowers you to create a blog that truly stands out!
+
+            With WeDot by your side, starting a successful blog and sharing your voice with the world has never been easier. So dive in, explore the platform, and embark on your blogging adventure today!</p>
+            </div> 
+             
               </div>
               
             </div>

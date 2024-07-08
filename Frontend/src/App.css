@@ -20,11 +20,10 @@
     border-bottom-left-radius: 50%;
     border-top-left-radius: 50%;
 }
-.BgSvg{
+.homeh1 h1{
+font-size: large;  
+font-weight: 700;
 
-    
-  
-    
 }
 .bgFoot{
     border-top-left-radius: 20%;
@@ -39,3 +38,4 @@ option{
     font-family: cursive;
     text-shadow: 2px 3px 5px rgb(254, 1, 1);
 }
+
